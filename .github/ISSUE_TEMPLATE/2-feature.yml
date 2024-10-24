@@ -1,13 +1,13 @@
 name: "\U0001F680 Feature request"
-description: Suggest an idea for MiroTalk P2P
+description: Suggest an idea for iLearn Center
 labels: ["feature-request"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for suggesting an idea to make MiroTalk P2P better.
+        Thank you for suggesting an idea to make iLearn Center better.
 
-        **Note**: the ultimate decision for implementing features lies on the MiroTalk team, not all feature requests shall be accepted.
+        **Note**: the ultimate decision for implementing features lies on the ilearncenters team, not all feature requests shall be accepted.
   - type: textarea
     attributes:
       label: Feature request

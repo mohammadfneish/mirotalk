@@ -30,19 +30,19 @@ const footer = document.getElementById('footer');
 
 const brand = {
     app: {
-        name: 'MiroTalk',
+        name: 'ilearncenters',
         title: 'Meet<br />By ilearncenters',
         description:
             'P2P meeting System',
     },
     site: {
-        landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        loginTitle: 'MiroTalk - Host Protected login required.',
-        clientTitle: 'MiroTalk WebRTC Video call, Chat Room & Screen Sharing.',
-        privacyPolicyTitle: 'MiroTalk - privacy and policy.',
+        landingTitle: 'ilearncenters a Free Secure Video Calls, Chat & Screen Sharing.',
+        newCallTitle: 'ilearncenters a Free Secure Video Calls, Chat & Screen Sharing.',
+        loginTitle: 'ilearncenters - Host Protected login required.',
+        clientTitle: 'ilearncenters WebRTC Video call, Chat Room & Screen Sharing.',
+        privacyPolicyTitle: 'ilearncenters - privacy and policy.',
         stunTurnTitle: 'Test Stun/Turn Servers.',
-        notFoundTitle: 'MiroTalk - 404 Page not found.',
+        notFoundTitle: 'ilearncenters - 404 Page not found.',
         shortcutIcon: '../images/ilearn-centers-logo.png',
         appleTouchIcon: '../images/ilearn-centers-logo.png',
     },

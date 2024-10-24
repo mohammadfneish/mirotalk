@@ -2,10 +2,10 @@
 
 ## Create a Meeting
 
-To initiate a meeting, send an HTTP request to MiroTalk’s server with your API key. Replace the default secret key in `.env` with your own.
+To initiate a meeting, send an HTTP request to ilearncenters’s server with your API key. Replace the default secret key in `.env` with your own.
 
 ```bash
-API_KEY_SECRET=mirotalkp2p_default_secret
+API_KEY_SECRET=ilearncentersp2p_default_secret
 ```
 
 Use the following examples to make API calls:
@@ -43,7 +43,7 @@ To embed a meeting in your service or app, use an iframe with the source attribu
 ```html
 <iframe
     allow="camera; microphone; display-capture; fullscreen; clipboard-read; clipboard-write; web-share; autoplay"
-    src="https://p2p.mirotalk.com/join/test"
+    src="https://meet.ilearncenters.com/join/test"
     style="height: 100vh; width: 100vw; border: 0px;"
 ></iframe>
 ```
@@ -57,7 +57,7 @@ Integrate video meetings into your website or application quickly by incorporati
 ```html
 <iframe
     allow="camera; microphone; display-capture; fullscreen; clipboard-read; clipboard-write; web-share; autoplay"
-    src="https://p2p.mirotalk.com/newcall"
+    src="https://meet.ilearncenters.com/newcall"
     style="height: 100vh; width: 100vw; border: 0px;"
 ></iframe>
 ```

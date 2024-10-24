@@ -13,7 +13,7 @@ $ make deploy
 
 # Understanding way
 
-If you would like to deploy Mirotalk to kubernetes
+If you would like to deploy ilearncenters to kubernetes
 this set of files can help you in that task
 
 Bellow is explanation of files in this folder which will form one output file in `output` folder
@@ -44,7 +44,7 @@ This file represent definition of certificate (request) when using [Cert Manager
 
 ## p2p-ingress.yaml
 
-This is generic ingress object in kubernetes that is responsible to route external traffic to mirotalk deployed application and if used in conjuction with p2p-cert.yaml (default) will provide TLS enabled access to your mirotalk instance
+This is generic ingress object in kubernetes that is responsible to route external traffic to ilearncenters deployed application and if used in conjuction with p2p-cert.yaml (default) will provide TLS enabled access to your ilearncenters instance
 
 ## p2p-service.yaml
 

@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-    mirotalk:
-        image: mirotalk/p2p:latest
+    ilearncenters:
+        image: ilearncenters/p2p:latest
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: mirotalk
-        hostname: mirotalk
+        container_name: ilearncenters
+        hostname: ilearncenters
         volumes:
             - .env:/src/.env:ro
             # These volumes are not mandatory, uncomment if you want to use it
@@ -23,7 +23,7 @@ services:
 #     - 3000
 #   labels:
 #     - "traefik.enable=true"
-#     - "traefik.http.routers.mirotalk.rule=Host(`mirotalk.example.com`)"
-#     - "traefik.http.routers.mirotalk.entrypoints=websecure"
-#     - "traefik.http.routers.mirotalk.tls.certresolver=myresolver"
-#     - "traefik.http.services.mirotalk.loadbalancer.server.port=3000"
+#     - "traefik.http.routers.ilearncenters.rule=Host(`ilearncenters.example.com`)"
+#     - "traefik.http.routers.ilearncenters.entrypoints=websecure"
+#     - "traefik.http.routers.ilearncenters.tls.certresolver=myresolver"
+#     - "traefik.http.services.ilearncenters.loadbalancer.server.port=3000"

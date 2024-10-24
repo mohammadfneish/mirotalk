@@ -4,9 +4,9 @@
 import requests
 import json
 
-API_KEY_SECRET = "mirotalkp2p_default_secret"
-MIROTALK_URL = "https://p2p.mirotalk.com/api/v1/token"
-#MIROTALK_URL = "http://localhost:3000/api/v1/token"
+API_KEY_SECRET = "ilearncentersp2p_default_secret"
+ilearncenters_URL = "https://meet.ilearncenters.com/api/v1/token"
+#ilearncenters_URL = "http://localhost:3000/api/v1/token"
 
 headers = {
     "authorization": API_KEY_SECRET,
@@ -21,7 +21,7 @@ data = {
 }
 
 response = requests.post(
-    MIROTALK_URL, 
+    ilearncenters_URL, 
     headers=headers, 
     json=data
 )

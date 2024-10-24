@@ -1,7 +1,7 @@
-# MiroTalk P2P - Self Hosting
+# iLearn Center - Self Hosting
 
-### How can I self-host MiroTalk P2P on my own server?
+### How can I self-host iLearn Center on my own server?
 
-[https://docs.mirotalk.com/mirotalk-p2p/self-hosting/](https://docs.mirotalk.com/mirotalk-p2p/self-hosting/)
+[https://docs.ilearncenters.com/ilearncenters-p2p/self-hosting/](https://docs.ilearncenters.com/ilearncenters-p2p/self-hosting/)
 
 ---

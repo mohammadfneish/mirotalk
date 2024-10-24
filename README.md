@@ -1,4 +1,4 @@
-<h1 align="center">MiroTalk P2P</h1>
+<h1 align="center">iLearn Center</h1>
 
 <br />
 
@@ -15,13 +15,13 @@
 <hr />
 
 <p align="center">
-    <a href="https://p2p.mirotalk.com">Explore MiroTalk P2P</a>
+    <a href="https://meet.ilearncenters.com">Explore iLearn Center</a>
 </p>
 
 <hr />
 
 <p align="center">
-    <a href="https://p2p.mirotalk.com"><img src="public/images/mirotalk-header.gif"></a>
+    <a href="https://meet.ilearncenters.com"><img src="public/images/ilearncenters-header.gif"></a>
 </p>
 
 <hr />
@@ -89,7 +89,7 @@
 
 <br/>
 
-1. `Open` [MiroTalk P2P](https://p2p.mirotalk.com/newcall) or [alternative link](https://mirotalk.up.railway.app/newcall).
+1. `Open` [iLearn Center](https://meet.ilearncenters.com/newcall) or [alternative link](https://ilearncenters.up.railway.app/newcall).
 2. `Choose` a room name and click **Join Room**.
 3. `Grant` camera and microphone access.
 4. `Share` the room URL and wait for participants to join the video conference.
@@ -102,8 +102,8 @@
 <br/>
 
 -   You can `directly join a room` by using links like:
--   https://p2p.mirotalk.com/join?room=test&name=mirotalk&audio=0&video=0&screen=0&hide=0&notify=0
--   https://mirotalk.up.railway.app/join?room=test&name=mirotalk&audio=0&video=0&screen=0&hide=0&notify=0
+-   https://meet.ilearncenters.com/join?room=test&name=ilearncenters&audio=0&video=0&screen=0&hide=0&notify=0
+-   https://ilearncenters.up.railway.app/join?room=test&name=ilearncenters&audio=0&video=0&screen=0&hide=0&notify=0
 
     | Params | Type    | Description     |
     | ------ | ------- | --------------- |
@@ -127,7 +127,7 @@
 
 <br/>
 
-When [host protection](https://docs.mirotalk.com/mirotalk-p2p/host-protection/) or host user auth is enabled, the host/users must provide a valid username and password as specified in the `.env` file.
+When [host protection](https://docs.ilearncenters.com/ilearncenters-p2p/host-protection/) or host user auth is enabled, the host/users must provide a valid username and password as specified in the `.env` file.
 
 | Params           | Value                                                                            | Description                                                                            |
 | ---------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -149,7 +149,7 @@ To embed a meeting within `your service or app` using an iframe, you can use the
 ```html
 <iframe
     allow="camera; microphone; display-capture; fullscreen; clipboard-read; clipboard-write; web-share; autoplay"
-    src="https://p2p.mirotalk.com/newcall"
+    src="https://meet.ilearncenters.com/newcall"
     style="height: 100vh; width: 100vw; border: 0px;"
 ></iframe>
 ```
@@ -161,13 +161,13 @@ To embed a meeting within `your service or app` using an iframe, you can use the
 
 <br/>
 
--   Before running MiroTalk P2P, ensure you have `Node.js` installed. This project has been tested with Node versions [12.X](https://nodejs.org/en/blog/release/v12.22.1/), [14.X](https://nodejs.org/en/blog/release/v14.17.5/), [16.X](https://nodejs.org/en/blog/release/v16.15.1/) and [18.x](https://nodejs.org/en/download).
+-   Before running iLearn Center, ensure you have `Node.js` installed. This project has been tested with Node versions [12.X](https://nodejs.org/en/blog/release/v12.22.1/), [14.X](https://nodejs.org/en/blog/release/v14.17.5/), [16.X](https://nodejs.org/en/blog/release/v16.15.1/) and [18.x](https://nodejs.org/en/download).
 
 ```bash
 # clone this repo
-$ git clone https://github.com/miroslavpejic85/mirotalk.git
-# go to mirotalk dir
-$ cd mirotalk
+$ git clone https://github.com/mohammadfneish/ilearncenters.git
+# go to ilearncenters dir
+$ cd ilearncenters
 # copy .env.template to .env (edit it according to your needs)
 $ cp .env.template .env
 # install dependencies
@@ -187,20 +187,20 @@ $ npm start
 
 ![docker](public/images/docker.png)
 
--   Repository [docker hub](https://hub.docker.com/r/mirotalk/p2p)
+-   Repository [docker hub](https://hub.docker.com/r/ilearncenters/p2p)
 -   Install [docker engine](https://docs.docker.com/engine/install/) and [docker compose](https://docs.docker.com/compose/install/)
 
 ```bash
 # clone this repo
-$ git clone https://github.com/miroslavpejic85/mirotalk.git
-# go to mirotalk dir
-$ cd mirotalk
+$ git clone https://github.com/mohammadfneish/ilearncenters.git
+# go to ilearncenters dir
+$ cd ilearncenters
 # copy .env.template to .env (edit it according to your needs)
 $ cp .env.template .env
 # Copy docker-compose.template.yml in docker-compose.yml (edit it according to your needs)
 $ cp docker-compose.template.yml docker-compose.yml
 # Get official image from Docker Hub
-$ docker pull mirotalk/p2p:latest
+$ docker pull ilearncenters/p2p:latest
 # create and start containers
 $ docker-compose up # -d
 # to stop and remove resources
@@ -218,33 +218,33 @@ $ docker-compose down
 
 -   `Ngrok/HTTPS:` You can start a video conference directly from your local PC and make it accessible from any device outside your network by following [these instructions](docs/ngrok.md), or expose it directly on [HTTPS](app/ssl/README.md).
 
--   `Stun/Turn:` Install your own [Stun & Turn](https://docs.mirotalk.com/coturn/stun-turn/) by following [this instructions](./docs/coturn.md).
+-   `Stun/Turn:` Install your own [Stun & Turn](https://docs.ilearncenters.com/coturn/stun-turn/) by following [this instructions](./docs/coturn.md).
 
--   `Self-hosting:` For `self-hosting MiroTalk P2P` on your own dedicated server, please refer to [this comprehensive guide](docs/self-hosting.md). It will provide you with all the necessary instructions to get your MiroTalk P2P instance up and running smoothly.
+-   `Self-hosting:` For `self-hosting iLearn Center` on your own dedicated server, please refer to [this comprehensive guide](docs/self-hosting.md). It will provide you with all the necessary instructions to get your iLearn Center instance up and running smoothly.
 
--   `Rest API:` The [API documentation](https://docs.mirotalk.com/mirotalk-p2p/api/) uses [swagger](https://swagger.io/) at http://localhost:3000/api/v1/docs. Or check it out on [live](https://p2p.mirotalk.com/api/v1/docs).
+-   `Rest API:` The [API documentation](https://docs.ilearncenters.com/ilearncenters-p2p/api/) uses [swagger](https://swagger.io/) at http://localhost:3000/api/v1/docs. Or check it out on [live](https://meet.ilearncenters.com/api/v1/docs).
 
 ```bash
 # The response will give you the active meetings (default disabled).
-$ curl -X GET "http://localhost:3000/api/v1/meetings" -H "authorization: mirotalksfu_default_secret" -H "Content-Type: application/json"
-$ curl -X GET "https://p2p.mirotalk.com/api/v1/meetings" -H "authorization: mirotalksfu_default_secret" -H "Content-Type: application/json"
-$ curl -X GET "mirotalk.up.railway.app/api/v1/meetings" -H "authorization: mirotalksfu_default_secret" -H "Content-Type: application/json"
+$ curl -X GET "http://localhost:3000/api/v1/meetings" -H "authorization: ilearncenterssfu_default_secret" -H "Content-Type: application/json"
+$ curl -X GET "https://meet.ilearncenters.com/api/v1/meetings" -H "authorization: ilearncenterssfu_default_secret" -H "Content-Type: application/json"
+$ curl -X GET "ilearncenters.up.railway.app/api/v1/meetings" -H "authorization: ilearncenterssfu_default_secret" -H "Content-Type: application/json"
 # The response will give you a entrypoint / Room URL for your meeting.
-$ curl -X POST "http://localhost:3000/api/v1/meeting" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json"
-$ curl -X POST "https://p2p.mirotalk.com/api/v1/meeting" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json"
-$ curl -X POST "https://mirotalk.up.railway.app/api/v1/meeting" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json"
+$ curl -X POST "http://localhost:3000/api/v1/meeting" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json"
+$ curl -X POST "https://meet.ilearncenters.com/api/v1/meeting" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json"
+$ curl -X POST "https://ilearncenters.up.railway.app/api/v1/meeting" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json"
 # The response will give you a entrypoint / URL for the direct join to the meeting.
-$ curl -X POST "http://localhost:3000/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"mirotalk","audio":"true","video":"true","screen":"false","hide":"false","notify":"true"}'
-$ curl -X POST "https://p2p.mirotalk.com/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"mirotalk","audio":"true","video":"true","screen":"false","hide":"false","notify":"true"}'
-$ curl -X POST "https://mirotalk.up.railway.app/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"mirotalk","audio":"true","video":"true","screen":"false","hide":"false","notify":"true"}'
+$ curl -X POST "http://localhost:3000/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"ilearncenters","audio":"true","video":"true","screen":"false","hide":"false","notify":"true"}'
+$ curl -X POST "https://meet.ilearncenters.com/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"ilearncenters","audio":"true","video":"true","screen":"false","hide":"false","notify":"true"}'
+$ curl -X POST "https://ilearncenters.up.railway.app/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"ilearncenters","audio":"true","video":"true","screen":"false","hide":"false","notify":"true"}'
 # The response will give you an entry point/URL for direct joining to the meeting with a token.
-$ curl -X POST "http://localhost:3000/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"mirotalk","audio":"true","video":"true","screen":"false","hide":"false","notify":"true","token":{"username":"username","password":"password","presenter":"true", "expire":"1h"}}'
-$ curl -X POST "https://p2p.mirotalk.com/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"mirotalk","audio":"true","video":"true","screen":"false","hide":"false","notify":"true","token":{"username":"username","password":"password","presenter":"true", "expire":"1h"}}'
-$ curl -X POST "https://mirotalk.up.railway.app/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"mirotalk","audio":"true","video":"true","screen":"false","hide":"false","notify":"true","token":{"username":"username","password":"password","presenter":"true", "expire":"1h"}}'
+$ curl -X POST "http://localhost:3000/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"ilearncenters","audio":"true","video":"true","screen":"false","hide":"false","notify":"true","token":{"username":"username","password":"password","presenter":"true", "expire":"1h"}}'
+$ curl -X POST "https://meet.ilearncenters.com/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"ilearncenters","audio":"true","video":"true","screen":"false","hide":"false","notify":"true","token":{"username":"username","password":"password","presenter":"true", "expire":"1h"}}'
+$ curl -X POST "https://ilearncenters.up.railway.app/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"room":"test","name":"ilearncenters","audio":"true","video":"true","screen":"false","hide":"false","notify":"true","token":{"username":"username","password":"password","presenter":"true", "expire":"1h"}}'
 # The response will give you a valid token for a meeting.
-$ curl -X POST "http://localhost:3000/api/v1/token" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}'
-$ curl -X POST "https://p2p.mirotalk.com/api/v1/token" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}'
-$ curl -X POST "https://mirotalk.up.railway.app/api/v1/join" -H "authorization: mirotalkp2p_default_secret" -H "Content-Type: application/json" --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}'
+$ curl -X POST "http://localhost:3000/api/v1/token" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}'
+$ curl -X POST "https://meet.ilearncenters.com/api/v1/token" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}'
+$ curl -X POST "https://ilearncenters.up.railway.app/api/v1/join" -H "authorization: ilearncentersp2p_default_secret" -H "Content-Type: application/json" --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}'
 ```
 
 </details>
@@ -270,7 +270,7 @@ Experience also top-tier German web hosting – dedicated servers, VPS, and web 
 
 ---
 
-To set up your own instance of `MiroTalk P2P` on a dedicated cloud server, please refer to our comprehensive [self-hosting documentation](https://docs.mirotalk.com/mirotalk-p2p/self-hosting/). This guide will walk you through the process step by step, ensuring a smooth and successful deployment.
+To set up your own instance of `iLearn Center` on a dedicated cloud server, please refer to our comprehensive [self-hosting documentation](https://docs.ilearncenters.com/ilearncenters-p2p/self-hosting/). This guide will walk you through the process step by step, ensuring a smooth and successful deployment.
 
 </details>
 
@@ -279,19 +279,19 @@ To set up your own instance of `MiroTalk P2P` on a dedicated cloud server, pleas
 
 <br/>
 
-<a target="_blank" href="https://p2p.mirotalk.com"><img src="public/sponsors/Hetzner.png" style="width: 220px;"></a>
+<a target="_blank" href="https://meet.ilearncenters.com"><img src="public/sponsors/Hetzner.png" style="width: 220px;"></a>
 
-https://p2p.mirotalk.com
+https://meet.ilearncenters.com
 
-[![hetzner-qr](public/images/mirotalk-hetzner-qr.png)](https://p2p.mirotalk.com)
+[![hetzner-qr](public/images/ilearncenters-hetzner-qr.png)](https://meet.ilearncenters.com)
 
 <br>
 
-<a target="_blank" href="https://railway.app/new/template/mirotalk?referralCode=mirotalk"><img src="https://railway.app/button.svg" style="width: 220px;"></a>
+<a target="_blank" href="https://railway.app/new/template/ilearncenters?referralCode=ilearncenters"><img src="https://railway.app/button.svg" style="width: 220px;"></a>
 
-https://mirotalk.up.railway.app
+https://ilearncenters.up.railway.app
 
-[![railway-qr](public/images/mirotalk-railway-qr.png)](https://mirotalk.up.railway.app)
+[![railway-qr](public/images/ilearncenters-railway-qr.png)](https://ilearncenters.up.railway.app)
 
 </details>
 
@@ -332,9 +332,9 @@ For `Security` concerning, please follow [this documentation](./SECURITY.md).
 
 [![AGPLv3](public/images/AGPLv3.png)](LICENSE)
 
-MiroTalk P2P is free and open-source under the terms of AGPLv3 (GNU Affero General Public License v3.0). Please `respect the license conditions`, In particular `modifications need to be free as well and made available to the public`. Get a quick overview of the license at [Choose an open source license](https://choosealicense.com/licenses/agpl-3.0/).
+iLearn Center is free and open-source under the terms of AGPLv3 (GNU Affero General Public License v3.0). Please `respect the license conditions`, In particular `modifications need to be free as well and made available to the public`. Get a quick overview of the license at [Choose an open source license](https://choosealicense.com/licenses/agpl-3.0/).
 
-To obtain a [MiroTalk P2P license](https://docs.mirotalk.com/license/licensing-options/) with terms different from the AGPLv3, you can conveniently make your [purchase on CodeCanyon](https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661). This allows you to tailor the licensing conditions to better suit your specific requirements.
+To obtain a [iLearn Center license](https://docs.ilearncenters.com/license/licensing-options/) with terms different from the AGPLv3, you can conveniently make your [purchase on CodeCanyon](https://codecanyon.net/item/ilearncenters-p2p-webrtc-realtime-video-conferences/38376661). This allows you to tailor the licensing conditions to better suit your specific requirements.
 
 </details>
 
@@ -343,7 +343,7 @@ To obtain a [MiroTalk P2P license](https://docs.mirotalk.com/license/licensing-o
 
 <br/>
 
-Do you find MiroTalk P2P indispensable for your needs? Join us in supporting this transformative project by [becoming a backer or sponsor](https://github.com/sponsors/miroslavpejic85). By doing so, not only will your logo prominently feature here, but you'll also drive the growth and sustainability of MiroTalk P2P. Your support is vital in ensuring that this valuable platform continues to thrive and remain accessible for all. Make an impact – back MiroTalk P2P today and be part of this exciting journey!
+Do you find iLearn Center indispensable for your needs? Join us in supporting this transformative project by [becoming a backer or sponsor](https://github.com/sponsors/mohammadfneish). By doing so, not only will your logo prominently feature here, but you'll also drive the growth and sustainability of iLearn Center. Your support is vital in ensuring that this valuable platform continues to thrive and remain accessible for all. Make an impact – back iLearn Center today and be part of this exciting journey!
 
 |                                                                                   |                                                                                        |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -365,41 +365,41 @@ Do you find MiroTalk P2P indispensable for your needs? Join us in supporting thi
 
 </details>
 
-## Diving into Additional MiroTalk Projects:
+## Diving into Additional ilearncenters Projects:
 
 <details>
-<summary>MiroTalk SFU</summary>
+<summary>ilearncenters SFU</summary>
 
 <br>
 
-Try also [MiroTalk SFU](https://github.com/miroslavpejic85/mirotalksfu) `selective forwarding unit` real-time video conferences, optimized for large groups. `Unlimited time, unlimited concurrent rooms` each having 8+ participants, up to ~ 100 per single CPU.
+Try also [ilearncenters SFU](https://github.com/mohammadfneish/ilearncenterssfu) `selective forwarding unit` real-time video conferences, optimized for large groups. `Unlimited time, unlimited concurrent rooms` each having 8+ participants, up to ~ 100 per single CPU.
 
 </details>
 
 <details>
-<summary>MiroTalk C2C</summary>
+<summary>ilearncenters C2C</summary>
 
 <br>
 
-Try also [MiroTalk C2C](https://github.com/miroslavpejic85/mirotalkc2c) `peer to peer` real-time video conferences, optimized for cam 2 cam. `Unlimited time, unlimited concurrent rooms` each having 2 participants.
+Try also [ilearncenters C2C](https://github.com/mohammadfneish/ilearncentersc2c) `peer to peer` real-time video conferences, optimized for cam 2 cam. `Unlimited time, unlimited concurrent rooms` each having 2 participants.
 
 </details>
 
 <details>
-<summary>MiroTalk BRO</summary>
+<summary>ilearncenters BRO</summary>
 
 <br>
 
-Try also [MiroTalk BRO](https://github.com/miroslavpejic85/mirotalkbro) `Live broadcast` (peer to peer) live video, audio and screen stream to all connected users (viewers). `Unlimited time, unlimited concurrent rooms` each having a broadcast and many viewers.
+Try also [ilearncenters BRO](https://github.com/mohammadfneish/ilearncentersbro) `Live broadcast` (peer to peer) live video, audio and screen stream to all connected users (viewers). `Unlimited time, unlimited concurrent rooms` each having a broadcast and many viewers.
 
 </details>
 
 <details>
-<summary>MiroTalk WEB</summary>
+<summary>ilearncenters WEB</summary>
 
 <br>
 
-Try also [MiroTalk WEB](https://github.com/miroslavpejic85/mirotalkwebrtc) a platform that allows for the management of an `unlimited number of users`. Each user must register with their email, username, and password, after which they gain access to their `personal dashboard`. Within the dashboard, users can `manage their rooms and schedule meetings` using the desired version of MiroTalk on a specified date and time. Invitations to these meetings can be sent via email, shared through the web browser, or sent via SMS.
+Try also [ilearncenters WEB](https://github.com/mohammadfneish/ilearncenterswebrtc) a platform that allows for the management of an `unlimited number of users`. Each user must register with their email, username, and password, after which they gain access to their `personal dashboard`. Within the dashboard, users can `manage their rooms and schedule meetings` using the desired version of ilearncenters on a specified date and time. Invitations to these meetings can be sent via email, shared through the web browser, or sent via SMS.
 
 </details>
 

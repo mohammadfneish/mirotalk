@@ -1,11 +1,11 @@
 #!/bin/bash
 
-API_KEY_SECRET="mirotalkp2p_default_secret"
-# MIROTALK_URL="http://localhost:3000/api/v1/meeting"
-MIROTALK_URL="https://p2p.mirotalk.com/api/v1/meeting"
-# MIROTALK_URL="https://mirotalk.up.railway.app/api/v1/meeting"
+API_KEY_SECRET="ilearncentersp2p_default_secret"
+# ilearncenters_URL="http://localhost:3000/api/v1/meeting"
+ilearncenters_URL="https://meet.ilearncenters.com/api/v1/meeting"
+# ilearncenters_URL="https://ilearncenters.up.railway.app/api/v1/meeting"
 
-curl $MIROTALK_URL \
+curl $ilearncenters_URL \
     --header "authorization: $API_KEY_SECRET" \
     --header "Content-Type: application/json" \
     --request POST
