@@ -10629,7 +10629,7 @@ function leaveFeedback() {
         showDenyButton: true,
         background: swBg,
         imageUrl: images.feedback,
-        title: 'Leave a feedback111',
+        title: 'Are you sure you want to exit?',
         text: 'Do you want to rate your ilearncenters experience?',
         confirmButtonText: `Yes`,
         denyButtonText: `No`,
