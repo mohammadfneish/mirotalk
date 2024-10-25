@@ -10635,7 +10635,7 @@ function leaveFeedback() {
         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
     }).then((result) => {
         if (result.isConfirmed) {
-            openURL(surveyURL);
+           redirectOnLeave();
         } else {
             redirectOnLeave();
         }
