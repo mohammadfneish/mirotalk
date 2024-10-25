@@ -10624,15 +10624,13 @@ function leaveRoom() {
  */
 function leaveFeedback() {
     Swal.fire({
-        allowOutsideClick: false,
-        allowEscapeKey: false,
+        allowOutsideClick: true,
+        allowEscapeKey: true,
         showDenyButton: true,
         background: swBg,
         imageUrl: images.feedback,
         title: 'Are you sure you want to exit?',
-        text: 'Do you want to rate your ilearncenters experience?',
-        confirmButtonText: `Yes`,
-        denyButtonText: `No`,
+        denyButtonText: `Yes`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },
         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
     }).then((result) => {
