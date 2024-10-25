@@ -8922,7 +8922,7 @@ function ejectEveryone() {
         text: 'Are you sure to want eject all participants from the room?',
         showDenyButton: true,
         confirmButtonText: `Yes`,
-        denyButtonText: `Yes`,
+        denyButtonText: `No`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },
         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
     }).then((result) => {
