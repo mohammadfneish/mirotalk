@@ -31,13 +31,13 @@ dependencies: {
 */
 
 /**
- * MiroTalk P2P - Server component
+ * iLearn Center - Server component
  *
- * @link    GitHub: https://github.com/miroslavpejic85/mirotalk
- * @link    Official Live demo: https://p2p.mirotalk.com
+ * @link    GitHub: https://github.com/mohammadfneish/ilearncenters
+ * @link    Official Live demo: https://meet.ilearncenters.com
  * @license For open source use: AGPLv3
- * @license For commercial use or closed source, contact us at license.mirotalk@gmail.com or purchase directly from CodeCanyon
- * @license CodeCanyon: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
+ * @license For commercial use or closed source, contact us at license.ilearncenters@gmail.com or purchase directly from CodeCanyon
+ * @license CodeCanyon: https://codecanyon.net/item/ilearncenters-p2p-webrtc-realtime-video-conferences/38376661
  * @author  Miroslav Pejic - miroslav.pejic.85@gmail.com
  * @version 1.3.80
  *
@@ -151,7 +151,7 @@ const io = new Server({
 // Host protection (disabled by default)
 const hostProtected = getEnvBoolean(process.env.HOST_PROTECTED);
 const userAuth = getEnvBoolean(process.env.HOST_USER_AUTH);
-const hostUsersString = process.env.HOST_USERS || '[{"username": "MiroTalk", "password": "P2P"}]';
+const hostUsersString = process.env.HOST_USERS || '[{"username": "ilearncenters", "password": "P2P"}]';
 const hostUsers = JSON.parse(hostUsersString);
 const hostCfg = {
     protected: hostProtected,
@@ -162,12 +162,12 @@ const hostCfg = {
 
 // JWT config
 const jwtCfg = {
-    JWT_KEY: process.env.JWT_KEY || 'mirotalk_jwt_secret',
+    JWT_KEY: process.env.JWT_KEY || 'ilearncenters_jwt_secret',
     JWT_EXP: process.env.JWT_EXP || '1h',
 };
 
 // Room presenters
-const roomPresentersString = process.env.PRESENTERS || '["MiroTalk P2P"]';
+const roomPresentersString = process.env.PRESENTERS || '["iLearn Center"]';
 const roomPresenters = JSON.parse(roomPresentersString);
 
 // Swagger config
@@ -179,7 +179,7 @@ const swaggerDocument = yaml.load(fs.readFileSync(path.join(__dirname, '/../api/
 const { v4: uuidV4 } = require('uuid');
 const apiBasePath = '/api/v1'; // api endpoint path
 const api_docs = host + apiBasePath + '/docs'; // api docs
-const api_key_secret = process.env.API_KEY_SECRET || 'mirotalkp2p_default_secret';
+const api_key_secret = process.env.API_KEY_SECRET || 'ilearncentersp2p_default_secret';
 const apiDisabledString = process.env.API_DISABLED || '["token", "meetings"]';
 const api_disabled = JSON.parse(apiDisabledString);
 
@@ -335,7 +335,7 @@ function OIDCAuth(req, res, next) {
 // stats configuration
 const statsData = {
     enabled: process.env.STATS_ENABLED ? getEnvBoolean(process.env.STATS_ENABLED) : true,
-    src: process.env.STATS_SCR || 'https://stats.mirotalk.com/script.js',
+    src: process.env.STATS_SCR || 'https://stats.ilearncenters.com/script.js',
     id: process.env.STATS_ID || 'c7615aa7-ceec-464a-baba-54cb605d7261',
 };
 
@@ -501,7 +501,7 @@ app.get(['/stats'], (req, res) => {
     res.send(statsData);
 });
 
-// mirotalk about
+// ilearncenters about
 app.get(['/about'], (req, res) => {
     res.sendFile(views.about);
 });
@@ -524,9 +524,9 @@ app.get('/join/', async (req, res) => {
     if (Object.keys(req.query).length > 0) {
         log.debug('Request Query', req.query);
         /* 
-            http://localhost:3000/join?room=test&name=mirotalk&audio=1&video=1&screen=0&notify=0&hide=0
-            https://p2p.mirotalk.com/join?room=test&name=mirotalk&audio=1&video=1&screen=0&notify=0&hide=0
-            https://mirotalk.up.railway.app/join?room=test&name=mirotalk&audio=1&video=1&screen=0&notify=0&hide=0
+            http://localhost:3000/join?room=test&name=ilearncenters&audio=1&video=1&screen=0&notify=0&hide=0
+            https://meet.ilearncenters.com/join?room=test&name=ilearncenters&audio=1&video=1&screen=0&notify=0&hide=0
+            https://ilearncenters.up.railway.app/join?room=test&name=ilearncenters&audio=1&video=1&screen=0&notify=0&hide=0
         */
         const { room, name, audio, video, screen, notify, hide, token } = checkXSS(req.query);
 
@@ -668,7 +668,7 @@ app.post(['/login'], (req, res) => {
 });
 
 /**
-    MiroTalk API v1
+    ilearncenters API v1
     For api docs we use: https://swagger.io/
 */
 
@@ -684,7 +684,7 @@ app.post([`${apiBasePath}/token`], (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get token - Unauthorized', {
+        log.debug('ilearncenters get token - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -694,7 +694,7 @@ app.post([`${apiBasePath}/token`], (req, res) => {
     const token = api.getToken(req.body);
     res.json({ token: token });
     // log.debug the output if all done
-    log.debug('MiroTalk get token - Authorized', {
+    log.debug('ilearncenters get token - Authorized', {
         header: req.headers,
         body: req.body,
         token: token,
@@ -713,7 +713,7 @@ app.get([`${apiBasePath}/meetings`], (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get meetings - Unauthorized', {
+        log.debug('ilearncenters get meetings - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -723,7 +723,7 @@ app.get([`${apiBasePath}/meetings`], (req, res) => {
     const meetings = api.getMeetings(peers);
     res.json({ meetings: meetings });
     // log.debug the output if all done
-    log.debug('MiroTalk get meetings - Authorized', {
+    log.debug('ilearncenters get meetings - Authorized', {
         header: req.headers,
         body: req.body,
         meetings: meetings,
@@ -741,7 +741,7 @@ app.post([`${apiBasePath}/meeting`], (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get meeting - Unauthorized', {
+        log.debug('ilearncenters get meeting - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -749,7 +749,7 @@ app.post([`${apiBasePath}/meeting`], (req, res) => {
     }
     const meetingURL = api.getMeetingURL();
     res.json({ meeting: meetingURL });
-    log.debug('MiroTalk get meeting - Authorized', {
+    log.debug('ilearncenters get meeting - Authorized', {
         header: req.headers,
         body: req.body,
         meeting: meetingURL,
@@ -767,7 +767,7 @@ app.post([`${apiBasePath}/join`], (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get join - Unauthorized', {
+        log.debug('ilearncenters get join - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -775,7 +775,7 @@ app.post([`${apiBasePath}/join`], (req, res) => {
     }
     const joinURL = api.getJoinURL(req.body);
     res.json({ join: joinURL });
-    log.debug('MiroTalk get join - Authorized', {
+    log.debug('ilearncenters get join - Authorized', {
         header: req.headers,
         body: req.body,
         join: joinURL,
@@ -783,7 +783,7 @@ app.post([`${apiBasePath}/join`], (req, res) => {
 });
 
 /*
-    MiroTalk Slack app v1
+    ilearncenters Slack app v1
     https://api.slack.com/authentication/verifying-requests-from-slack
 */
 
@@ -831,7 +831,7 @@ function getMeetingURL(host) {
     return 'http' + (host.includes('localhost') ? '' : 's') + '://' + host + '/join/' + uuidV4();
 }
 
-// end of MiroTalk API v1
+// end of ilearncenters API v1
 
 // not match any of page before, so 404 not found
 app.get('*', function (req, res) {

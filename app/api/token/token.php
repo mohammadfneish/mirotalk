@@ -1,11 +1,11 @@
 <?php
 
-$API_KEY_SECRET = "mirotalkp2p_default_secret";
-$MIROTALK_URL = "https://p2p.mirotalk.com/api/v1/token";
-#$MIROTALK_URL = "http://localhost:3000/api/v1/token";
+$API_KEY_SECRET = "ilearncentersp2p_default_secret";
+$ilearncenters_URL = "https://meet.ilearncenters.com/api/v1/token";
+#$ilearncenters_URL = "http://localhost:3000/api/v1/token";
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $MIROTALK_URL);
+curl_setopt($ch, CURLOPT_URL, $ilearncenters_URL);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 

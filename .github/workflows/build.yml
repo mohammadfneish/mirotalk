@@ -31,4 +31,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: mirotalk/p2p:latest
+          tags: ilearncenters/p2p:latest

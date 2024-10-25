@@ -1,6 +1,6 @@
-## Expose MiroTalk on HTTPS
+## Expose ilearncenters on HTTPS
 
-![mirotalk-https](https.png)
+![ilearncenters-https](https.png)
 
 1. Generate a [self-signed certificate](https://en.wikipedia.org/wiki/Self-signed_certificate)
 

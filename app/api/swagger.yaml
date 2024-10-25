@@ -1,8 +1,8 @@
 swagger: '2.0'
 
 info:
-    title: MiroTalk P2P API
-    description: API description for external applications that integrates with MiroTalk P2P.
+    title: iLearn Center API
+    description: API description for external applications that integrates with iLearn Center.
     version: 1.0.1
 
 basePath: /api/v1
@@ -66,7 +66,7 @@ paths:
                               default: 'test'
                           name:
                               type: string
-                              default: 'mirotalk'
+                              default: 'ilearncenters'
                           audio:
                               type: boolean
                               default: false

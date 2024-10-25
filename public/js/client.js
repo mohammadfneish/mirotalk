@@ -7,13 +7,13 @@
 */
 
 /**
- * MiroTalk P2P - Client component
+ * iLearn Center - Client component
  *
- * @link    GitHub: https://github.com/miroslavpejic85/mirotalk
- * @link    Official Live demo: https://p2p.mirotalk.com
+ * @link    GitHub: https://github.com/mohammadfneish/ilearncenters
+ * @link    Official Live demo: https://meet.ilearncenters.com
  * @license For open source use: AGPLv3
- * @license For commercial use or closed source, contact us at license.mirotalk@gmail.com or purchase directly from CodeCanyon
- * @license CodeCanyon: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
+ * @license For commercial use or closed source, contact us at license.ilearncenters@gmail.com or purchase directly from CodeCanyon
+ * @license CodeCanyon: https://codecanyon.net/item/ilearncenters-p2p-webrtc-realtime-video-conferences/38376661
  * @author  Miroslav Pejic - miroslav.pejic.85@gmail.com
  * @version 1.3.80
  *
@@ -43,10 +43,10 @@ const images = {
     message: '../images/message.png',
     leave: '../images/leave-room.png',
     vaShare: '../images/va-share.png',
-    about: '../images/mirotalk-logo.gif',
+    about: '../images/ilearncenters-logo.gif',
     feedback: '../images/feedback.png',
     forbidden: '../images/forbidden.png',
-    avatar: '../images/mirotalk-logo.png',
+    avatar: '../images/ilearncenters-logo.png',
     recording: '../images/recording.png',
 }; // nice free icon: https://www.iconfinder.com
 
@@ -142,7 +142,7 @@ const showVideoPipBtn = document.pictureInPictureEnabled;
 const showDocumentPipBtn = !isEmbedded && 'documentPictureInPicture' in window;
 
 /**
- * Configuration for controlling the visibility of buttons in the MiroTalk P2P client.
+ * Configuration for controlling the visibility of buttons in the iLearn Center client.
  * Set properties to true to show the corresponding buttons, or false to hide them.
  * captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn, showVideoPipBtn, showDocumentPipBtn -> (auto-detected).
  */
@@ -406,7 +406,7 @@ const pauseRecBtn = getId('pauseRecBtn');
 const resumeRecBtn = getId('resumeRecBtn');
 const recordingTime = getId('recordingTime');
 const lastRecordingInfo = getId('lastRecordingInfo');
-const themeSelect = getId('mirotalkTheme');
+const themeSelect = getId('ilearncentersTheme');
 const videoObjFitSelect = getId('videoObjFitSelect');
 const mainButtonsBar = getQsA('#buttonsBar button');
 const mainButtonsIcon = getQsA('#buttonsBar button i');
@@ -1516,7 +1516,7 @@ async function whoAreYou() {
         allowOutsideClick: false,
         allowEscapeKey: false,
         background: swBg,
-        title: 'MiroTalk P2P',
+        title: 'iLearn Center',
         position: 'center',
         input: 'text',
         inputPlaceholder: 'Enter your email or name',
@@ -2203,7 +2203,7 @@ async function handleRTCDataChannels(peer_id) {
         console.log('handleRTCDataChannels ' + peer_id, event);
         event.channel.onmessage = (msg) => {
             switch (event.channel.label) {
-                case 'mirotalk_chat_channel':
+                case 'ilearncenters_chat_channel':
                     try {
                         const dataMessage = JSON.parse(msg.data);
                         switch (dataMessage.type) {
@@ -2220,10 +2220,10 @@ async function handleRTCDataChannels(peer_id) {
                                 break;
                         }
                     } catch (err) {
-                        console.error('mirotalk_chat_channel', err);
+                        console.error('ilearncenters_chat_channel', err);
                     }
                     break;
-                case 'mirotalk_file_sharing_channel':
+                case 'ilearncenters_file_sharing_channel':
                     try {
                         const dataFile = msg.data;
                         if (dataFile instanceof ArrayBuffer && dataFile.byteLength != 0) {
@@ -2236,12 +2236,12 @@ async function handleRTCDataChannels(peer_id) {
                                         handleDataChannelFileSharing(arrayBuffer);
                                     })
                                     .catch((error) => {
-                                        console.error('mirotalk_file_sharing_channel', error);
+                                        console.error('ilearncenters_file_sharing_channel', error);
                                     });
                             }
                         }
                     } catch (err) {
-                        console.error('mirotalk_file_sharing_channel', err);
+                        console.error('ilearncenters_file_sharing_channel', err);
                     }
                     break;
                 default:
@@ -2341,7 +2341,7 @@ function handleSessionDescription(config) {
                                 });
                                 console.log('Answer setLocalDescription done!');
 
-                                // https://github.com/miroslavpejic85/mirotalk/issues/110
+                                // https://github.com/mohammadfneish/ilearncenters/issues/110
                                 if (needToCreateOffer) {
                                     needToCreateOffer = false;
                                     handleRtcOffer(peer_id);
@@ -2496,13 +2496,13 @@ function setCustomTheme() {
 }
 
 /**
- * Set mirotalk theme | dark | grey | ...
+ * Set ilearncenters theme | dark | grey | ...
  */
 function setTheme() {
     if (themeCustom.keep) return setCustomTheme();
 
-    mirotalkTheme.selectedIndex = lsSettings.theme;
-    const theme = mirotalkTheme.value;
+    ilearncentersTheme.selectedIndex = lsSettings.theme;
+    const theme = ilearncentersTheme.value;
     switch (theme) {
         case 'dark':
             // dark theme
@@ -2524,7 +2524,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(0, 0, 0, 0.7)');
             setSP('--dd-color', '#FFFFFF');
             document.body.style.background = 'radial-gradient(#393939, #000000)';
-            mirotalkTheme.selectedIndex = 0;
+            ilearncentersTheme.selectedIndex = 0;
             break;
         case 'grey':
             // grey theme
@@ -2546,7 +2546,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(0, 0, 0, 0.7)');
             setSP('--dd-color', '#FFFFFF');
             document.body.style.background = 'radial-gradient(#4f4f4f, #1c1c1c)';
-            mirotalkTheme.selectedIndex = 1;
+            ilearncentersTheme.selectedIndex = 1;
             break;
         case 'green':
             // green theme
@@ -2568,7 +2568,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(0, 42, 34, 0.7)');
             setSP('--dd-color', '#00FF00');
             document.body.style.background = 'radial-gradient(#004d40, #001f1c)';
-            mirotalkTheme.selectedIndex = 2;
+            ilearncentersTheme.selectedIndex = 2;
             break;
         case 'blue':
             // blue theme
@@ -2590,7 +2590,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(0, 39, 77, 0.7)');
             setSP('--dd-color', '#1E90FF');
             document.body.style.background = 'radial-gradient(#1a237e, #0d1b34)';
-            mirotalkTheme.selectedIndex = 3;
+            ilearncentersTheme.selectedIndex = 3;
             break;
         case 'red':
             // red theme
@@ -2611,7 +2611,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(42, 13, 13, 0.7)');
             setSP('--dd-color', '#FF4500');
             document.body.style.background = 'radial-gradient(#8B0000, #320000)';
-            mirotalkTheme.selectedIndex = 4;
+            ilearncentersTheme.selectedIndex = 4;
             break;
         case 'purple':
             // purple theme
@@ -2633,7 +2633,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(42, 0, 29, 0.7)');
             setSP('--dd-color', '#BF00FF');
             document.body.style.background = 'radial-gradient(#4B0082, #2C003E)';
-            mirotalkTheme.selectedIndex = 5;
+            ilearncentersTheme.selectedIndex = 5;
             break;
         case 'orange':
             // orange theme
@@ -2655,7 +2655,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(61, 26, 0, 0.7)');
             setSP('--dd-color', '#FFA500');
             document.body.style.background = 'radial-gradient(#FF8C00, #4B1C00)';
-            mirotalkTheme.selectedIndex = 6;
+            ilearncentersTheme.selectedIndex = 6;
             break;
         case 'yellow':
             // yellow theme
@@ -2677,7 +2677,7 @@ function setTheme() {
             setSP('--btns-bg-color', 'rgba(77, 59, 0, 0.7)');
             setSP('--dd-color', '#FFD700');
             document.body.style.background = 'radial-gradient(#FFD700, #3B3B00)';
-            mirotalkTheme.selectedIndex = 7;
+            ilearncentersTheme.selectedIndex = 7;
             break;
         // ...
         default:
@@ -6134,7 +6134,7 @@ function shareRoomByEmail() {
             const selectedDateTime = document.getElementById('datetimePicker').value;
             const roomPassword = isRoomLocked && thisRoomPassword ? 'Password: ' + thisRoomPassword + newLine : '';
             const email = '';
-            const emailSubject = `Please join our MiroTalk P2P Video Chat Meeting`;
+            const emailSubject = `Please join our iLearn Center Video Chat Meeting`;
             const emailBody = `The meeting is scheduled at: ${newLine} DateTime: ${selectedDateTime} ${newLine}${roomPassword}Click to join: ${roomURL} ${newLine}`;
             document.location = 'mailto:' + email + '?subject=' + emailSubject + '&body=' + emailBody;
         },
@@ -7145,7 +7145,7 @@ function downloadRecordedStream() {
  * @param {string} peer_id socket.id
  */
 function createChatDataChannel(peer_id) {
-    chatDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('mirotalk_chat_channel');
+    chatDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('ilearncenters_chat_channel');
     chatDataChannels[peer_id].onopen = (event) => {
         console.log('chatDataChannels created', event);
     };
@@ -9848,7 +9848,7 @@ function wbDrawing(status) {
  * @param {string} peer_id socket.id
  */
 function createFileSharingDataChannel(peer_id) {
-    fileDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('mirotalk_file_sharing_channel');
+    fileDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('ilearncenters_file_sharing_channel');
     fileDataChannels[peer_id].binaryType = 'arraybuffer';
     fileDataChannels[peer_id].onopen = (event) => {
         console.log('fileDataChannels created', event);
@@ -10034,7 +10034,7 @@ function selectFileToShare(peer_id, broadcast = false) {
     Swal.fire({
         allowOutsideClick: false,
         background: swBg,
-        imageAlt: 'mirotalk-file-sharing',
+        imageAlt: 'ilearncenters-file-sharing',
         imageUrl: images.share,
         position: 'center',
         title: 'Share file',
@@ -10240,7 +10240,7 @@ function endDownload() {
                 title: 'Received file',
                 text: incomingFileInfo.file.fileName + ' size ' + bytesToSize(incomingFileInfo.file.fileSize),
                 imageUrl: e.target.result,
-                imageAlt: 'mirotalk-file-img-download',
+                imageAlt: 'ilearncenters-file-img-download',
                 showDenyButton: true,
                 confirmButtonText: `Save`,
                 denyButtonText: `Cancel`,
@@ -10257,7 +10257,7 @@ function endDownload() {
         Swal.fire({
             allowOutsideClick: false,
             background: swBg,
-            imageAlt: 'mirotalk-file-download',
+            imageAlt: 'ilearncenters-file-download',
             imageUrl: images.share,
             position: 'center',
             title: 'Received file',
@@ -10561,7 +10561,7 @@ function handleKickedOut(config) {
 }
 
 /**
- * MiroTalk about info
+ * ilearncenters about info
  */
 function showAbout() {
     playSound('newMessage');
@@ -10570,7 +10570,7 @@ function showAbout() {
         background: swBg,
         position: 'center',
         title: '<strong>WebRTC P2P v1.3.80</strong>',
-        imageAlt: 'mirotalk-about',
+        imageAlt: 'ilearncenters-about',
         imageUrl: images.about,
         customClass: { image: 'img-about' },
         html: `
@@ -10579,7 +10579,7 @@ function showAbout() {
             <button 
                 id="support-button" 
                 data-umami-event="Support button" 
-                onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
+                onclick="window.open('https://codecanyon.net/user/mohammadfneish')">
                 <i class="${className.heart}" ></i>&nbsp;Support
             </button>
             <br /><br /><br />
@@ -10593,12 +10593,12 @@ function showAbout() {
             Email:<a 
                 id="email-button" 
                 data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
+                href="mailto:miroslav.pejic.85@gmail.com?subject=iLearn Center info"> 
                 miroslav.pejic.85@gmail.com
             </a>
             <br /><br />
             <hr />
-            <span>&copy; 2024 MiroTalk P2P, all rights reserved</span>
+            <span>&copy; 2024 iLearn Center, all rights reserved</span>
             <hr />
         </div>
         `,
@@ -10630,7 +10630,7 @@ function leaveFeedback() {
         background: swBg,
         imageUrl: images.feedback,
         title: 'Leave a feedback',
-        text: 'Do you want to rate your MiroTalk experience?',
+        text: 'Do you want to rate your ilearncenters experience?',
         confirmButtonText: `Yes`,
         denyButtonText: `No`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },
